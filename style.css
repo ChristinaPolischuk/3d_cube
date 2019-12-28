@@ -1,0 +1,66 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #000000;
+}
+
+.container {
+  max-width: 1170px;
+  padding: 0 15px;
+  margin: 200px auto;
+}
+
+.cube-wrapper,
+.cube {
+  width: 300px;
+  height: 300px;
+}
+
+.cube-wrapper {
+  position: relative;
+  perspective: 500px;
+  margin: 0 auto;
+}
+
+.cube {
+  transform-style: preserve-3d;
+}
+
+.cube__side {
+  position: absolute;
+  width: inherit;
+  height: inherit;
+  border: 5px solid #fff;
+  font: normal 70px/300px sans-serif;
+  text-align: center;
+  color: #ffffff;
+  /* backface-visibility: hidden; */
+}
+
+.cube__side.front {
+  transform: translateZ(150px);
+}
+
+.cube__side.back {
+  transform: rotateY(180deg) translateZ(150px);
+}
+
+.cube__side.right {
+  transform: rotateY(90deg) translateZ(150px);
+}
+
+.cube__side.left {
+  transform: rotateY(-90deg) translateZ(150px);
+}
+
+.cube__side.top {
+  transform: rotateX(90deg) translateZ(150px);
+}
+
+.cube__side.bottom {
+  transform: rotateX(-90deg) translateZ(150px);
+}
